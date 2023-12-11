@@ -1,0 +1,12 @@
+.navbar .navbar-brand{
+    color: #E50914;
+    font-weight: 900;
+}
+
+.navbar-nav .nav-item .nav-link{
+    color: #E50914;
+}
+/*
+#navbarNav{
+    float: left;
+} */
