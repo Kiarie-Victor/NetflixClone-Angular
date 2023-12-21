@@ -6,7 +6,8 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
 import { ErrorComponent } from './pages/error/error.component';
 
 const ROUTES: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'home', component:HomeComponent},
   {path:'search',component:SearchComponent},
   {path:'movie/:id', component:MovieDetailsComponent},
   {path:'**', component:ErrorComponent}
