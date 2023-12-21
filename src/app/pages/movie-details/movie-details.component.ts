@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
+import { Observable } from 'rxjs';
 import { MovieApiServiceService } from 'src/app/service/movie-api-service.service';
 
 @Component({
@@ -7,14 +8,24 @@ import { MovieApiServiceService } from 'src/app/service/movie-api-service.servic
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent implements OnInit{
+export class MovieDetailsComponent implements OnInit, OnDestroy{
+  routeParamObs: any;
   ngOnInit(): void {
-    let getParamId = this.router.snapshot.paramMap.get('id');
-    console.log(getParamId,'getparamid#');
-    this.getMovie(getParamId);
+    //let getParamId = this.router.snapshot.paramMap.get('id');
+    let getParamId ;
+    this.routeParamObs = this.router.paramMap.subscribe(
+      (param) => {
+        getParamId = param.get('id')
+        this.getMovie(getParamId);
+        this.getVideo(getParamId);
+        this.getMovieCast(getParamId);
+      }
+    )
+    
+  }
+  ngOnDestroy(){
+    this.routeParamObs.unsubscribe()
 
-    this.getVideo(getParamId);``
-    this.getMovieCast(getParamId);
   }
 
   constructor(private service:MovieApiServiceService, private router:ActivatedRoute) {}
@@ -30,7 +41,6 @@ getMovieVideoResult:any;
   getVideo(id:any)
   {
     this.service.getMovieVideo(id).subscribe((result)=>{
-        console.log(result,'getMovieVideo#');
         result.results.forEach((element:any) => {
         if(element.type=="Trailer")
         {
