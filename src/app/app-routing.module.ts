@@ -3,15 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
+import { ErrorComponent } from './pages/error/error.component';
 
-const routes: Routes = [
+const ROUTES: Routes = [
   {path:'',component:HomeComponent},
   {path:'search',component:SearchComponent},
-  {path:'movie/:id', component:MovieDetailsComponent}
+  {path:'movie/:id', component:MovieDetailsComponent},
+  {path:'**', component:ErrorComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(ROUTES)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

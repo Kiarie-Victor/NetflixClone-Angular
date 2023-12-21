@@ -11,9 +11,6 @@
               <div class="carousel-caption d-none d-md-block">
                       <h2>{{b.original_title}}</h2>
                       <p>{{b.overview}}</p>
-                      <p class="colortext">Media Type {{b.media_type
-                      }}</p>
-                      <p class="colortext" *ngIf="b.adult">Adult</p>
               </div>
             </div>
           <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -36,7 +33,7 @@
     <h5 class="text-white">Trending Movies</h5>
     <div class="rowposter mt-3 p-2">
       <ng-container *ngFor="let t of trendingMovieResult">
-        <img src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}" class="rowimg largeposter" alt="..."
+        <img src="https://image.tmdb.org/t/p/original/{{ t.poster_path }}" class="rowing largeposter" alt="..."
           [routerLink]="['/movie',t.id]">
       </ng-container>
 

@@ -6,6 +6,9 @@
 .navbar-nav .nav-item .nav-link{
     color: #E50914;
 }
+.active{
+    background-color: aqua;
+}
 /*
 #navbarNav{
     float: left;

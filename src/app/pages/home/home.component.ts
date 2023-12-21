@@ -10,7 +10,7 @@ import { Title,Meta } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
 
-  constructor(private service: MovieApiServiceService,private title:Title,private meta:Meta, element:ElementRef) {
+  constructor(private service: MovieApiServiceService,private title:Title,private meta:Meta) {
     this.title.setTitle('Home - showtime');
     this.meta.updateTag({name:'description',content:'watch online movies'});
     
@@ -43,16 +43,14 @@ export class HomeComponent implements OnInit {
   // bannerdata
   bannerData() {
     this.service.bannerApiData().subscribe((result) => {
-      console.log(result, 'bannerdatahello');
+
       this.bannerResult = result.results;
     });
   }
 
   trendingData() {
     this.service.trendingMovieApiData().subscribe((result) => {
-      console.log(result, 'trendingresult#');
       this.trendingMovieResult = result.results;
-      // this.trendingMovieResult
     });
   }
 
