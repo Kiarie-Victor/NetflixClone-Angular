@@ -4,12 +4,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { CourseGuardService } from './service/course-guard.service';
+import { CanDeactivateService } from './service/candeactivate.service';
+import { DemoComponent } from './pages/Demo/demo/demo.component';
 
 const ROUTES: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home', component:HomeComponent},
-  {path:'search',component:SearchComponent, canActivate:[CourseGuardService]},
+  {path:'demo', component:DemoComponent},
+  {path:'search',component:SearchComponent, canDeactivate:[CanDeactivateService]},
   {path:'movie/:id', component:MovieDetailsComponent},
   {path:'**', component:ErrorComponent}
 ];

@@ -8,7 +8,6 @@ export class UserToken{}
 export class CourseGuardService{
     canActivate(currentUser: UserToken, userId: string): boolean {
         return false;
-
       }
 }
 
