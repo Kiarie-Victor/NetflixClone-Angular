@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { MovieApiServiceService } from "./service/movie-api-service.service";
 import { AppComponent } from "./app.component";
+import { CourseGuardService } from "./service/course-guard.service";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AppComponent } from "./app.component";
     BrowserModule,
     AppRoutingModule
   ],
-  providers:[MovieApiServiceService],
+  providers:[MovieApiServiceService,CourseGuardService],
   bootstrap:[AppComponent]
 })
 export class AppModule{}
