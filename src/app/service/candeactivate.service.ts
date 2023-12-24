@@ -10,12 +10,12 @@ export class UserToken{}
 export class CanDeactivateService{
     canDeactivate(answer:boolean){
         
-        return false
+        return true
     }
 }
 
 
 
-const canDeactivateTeam: CanDeactivateFn<SearchComponent> = (component: SearchComponent, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState: RouterStateSnapshot) =>{
-    return inject(CanDeactivateService).canDeactivate(component.canExit())
+export const canDeactivateTeam: CanDeactivateFn<SearchComponent> = (component: SearchComponent, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState: RouterStateSnapshot) =>{
+    return inject(CanDeactivateService).canDeactivate(false)
 }

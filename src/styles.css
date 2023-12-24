@@ -6,8 +6,9 @@
 }
 
 body{
-    color: white;
+    color: rgb(66, 213, 16);
     font-family: 'Ubuntu', sans-serif;
     background-color: #000000;
     overflow-x: hidden;
+    overflow-y: auto;
 }

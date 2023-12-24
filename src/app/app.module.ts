@@ -10,7 +10,10 @@ import { MovieApiServiceService } from "./service/movie-api-service.service";
 import { AppComponent } from "./app.component";
 import { CourseGuardService } from "./service/course-guard.service";
 import { CanDeactivateService } from "./service/candeactivate.service";
-import { DemoComponent } from './pages/Demo/demo/demo.component';
+import { HighlightDirective } from "./directives/highlight.directive";
+import { PostCardService } from "./service/postcard.service";
+import { DemoComponent } from "./pages/demo/demo.component";
+import { PostResolveService } from "./service/postresolve.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { DemoComponent } from './pages/Demo/demo/demo.component';
     SearchComponent,
     MovieDetailsComponent,
     AppComponent,
-    DemoComponent
+    DemoComponent,
+    HighlightDirective
   ],
   imports:[
     HttpClientModule,
@@ -27,7 +31,7 @@ import { DemoComponent } from './pages/Demo/demo/demo.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers:[MovieApiServiceService,CourseGuardService,CanDeactivateService],
+  providers:[MovieApiServiceService,CourseGuardService,CanDeactivateService, PostCardService,PostResolveService],
   bootstrap:[AppComponent]
 })
 export class AppModule{}
