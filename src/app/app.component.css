@@ -6,3 +6,19 @@
 .navbar-nav .nav-item .nav-link{
     color: #E50914;
 }
+.spinner { 
+    border: 16px solid silver; 
+    border-right: 16px solid #222;
+    border-radius: 50%; 
+    width: 80px; 
+    height: 80px; 
+    animation: spin 700ms linear infinite; 
+    top:50%; 
+    left:50%; 
+    position:fixed;} 
+@keyframes spin { 
+    0% 
+    { transform: rotate(0deg) } 
+    100% 
+    { transform: rotate(-360deg) } 
+} 
