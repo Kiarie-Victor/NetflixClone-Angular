@@ -1,22 +1,23 @@
 <div class="form">
     <h2 id="registration"></h2>
-    <form (ngSubmit)="onSubmit(myForm)" #myForm = 'ngForm'>
+    <form (ngSubmit)="onSubmit()" #myForm = 'ngForm'>
         <div ngModelGroup = "personaLDetails" #personal = 'ngModelGroup'>
             <label for="fname">First Name</label>
-         <input type="text"  id="fname" placeholder="Your name.." name="firstname" required [(ngModel)]="firstName" #fname = 'ngModel'>
+         <input type="text"  id="fname" placeholder="Your name.." name="firstname" required ngModel #fname = 'ngModel'>
        <!-- <div>
             <small *ngIf="!fname.valid && fname.touched">first name is required field</small>
             <span *ngIf="firstName">you entered {{firstName}}</span>
         </div> -->
 
         <label for="lname">Last Name</label>
-        <input type="text" name="lastname" id="lname" placeholder="Your last name.." [(ngModel)]="secondName" required>
+        <input type="text" name="lastname" id="lname" placeholder="Your last name.." ngModel required>
 
         <label for="email">Email</label>
         <input type="email" name="email" id="email" name="email" placeholder="Your email" ngModel required email>
         <div>
             <small *ngIf="personal.invalid && personal.touched">Some of the fields do not have a valid value.</small>
         </div>
+        <button (click)="setDefaultValue()">Set Default value</button>
         </div>
         
 
@@ -47,4 +48,14 @@
 
         <input type="submit" value="Submit" id="btn">
     </form>
+</div>
+
+<div class="form-data">
+    <h1>Data</h1>
+    <p>First Name <b>{{firstName}}</b></p>
+    <p>Last Name <b>{{secondName}}</b>
+    </p>
+    <P>Email: <b>{{email}}</b></P>
+    <P>Country : <b>{{country}}</b></P>
+    <p>Gender: <b>{{gen}}</b></p>
 </div>
