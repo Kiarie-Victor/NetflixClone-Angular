@@ -14,6 +14,13 @@ export class FormsComponent {
   firstName?:string;
   secondName?:string;
 
+  gender = [
+    {id:'1', value:'male'},
+    {id:'2', value:'female'},
+    {id:'3', value:'other'},
+  ]
+  defaultGender = 'male'
+
   onSubmit(form: NgForm){
     console.log(form)
 
