@@ -6,10 +6,10 @@
           <div>
               <img [src]="video.thumbnail" style="width:220px; height:210px;">
           </div>
-          <div><h4>{{video.title}}</h4></div>
+          <div><h4>{{video.title | uppercase }}</h4></div>
           <div class="details">
               <div class="video-data">
-                <i class="material-icons">up</i>{{video.likes}}
+                <i class="material-icons">up</i>{{video.likes }}
               </div>
               <div class="video-data">
                 <i class="material-icons">down</i>{{video.dislikes}}

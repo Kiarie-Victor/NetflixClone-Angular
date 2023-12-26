@@ -1,0 +1,42 @@
+<div class="form">
+    <h2 id="registration"></h2>
+    <form (ngSubmit)="onSubmit(myForm)" #myForm = 'ngForm'>
+        <label for="fname">First Name</label>
+        <input type="text"  id="fname" placeholder="Your name.." name="firstname" ngModel>
+
+        <label for="lname">Last Name</label>
+        <input type="text" name="lastname" id="lname" placeholder="Your last name.." ngModel>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" name="email" placeholder="Your email" ngModel>
+
+        <label for="country">Country</label>
+        <select id="country" name="country" ngModel>
+            <option value="UK" >UK</option>
+            <option value="China" >China</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Russia">Russia</option>
+            <option value="United States">United States</option>
+        </select>
+
+        <label for="gender">Gender</label><br>
+        <input type="radio" name="gender" id="male" value="male " ngModel>
+        <label for="male">Male </label>
+
+        <input type="radio" name="gender" id="female" value="female" ngModel>
+        <label for="female">Female </label>
+
+        <input type="radio" name="gender" id="other" value="other" ngModel>
+        <label for="Other">Other</label>
+        <br><br>
+
+        <label> Hobbies <i>(Optional)</i></label>
+        <div class="form-inline">
+            <label><input type="checkbox" ngModel name="sport" value="sports" >Sports</label>
+            <label><input type="checkbox" ngModel name="movies" value="movies">Movies</label>
+            <label><input type="checkbox" ngModel name="music" value="music">Music</label>
+        </div>
+
+        <input type="submit" value="Submit" id="btn">
+    </form>
+</div>
