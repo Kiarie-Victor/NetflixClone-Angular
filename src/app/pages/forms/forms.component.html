@@ -2,16 +2,20 @@
     <h2 id="registration"></h2>
     <form (ngSubmit)="onSubmit(myForm)" #myForm = 'ngForm'>
         <label for="fname">First Name</label>
-        <input type="text"  id="fname" placeholder="Your name.." name="firstname" ngModel>
+        <input type="text"  id="fname" placeholder="Your name.." name="firstname" required [(ngModel)]="firstName" #fname = 'ngModel'>
+        <div>
+            <small *ngIf="!fname.valid && fname.touched">first name is required field</small>
+            <span *ngIf="firstName">you entered {{firstName}}</span>
+        </div>
 
         <label for="lname">Last Name</label>
-        <input type="text" name="lastname" id="lname" placeholder="Your last name.." ngModel>
+        <input type="text" name="lastname" id="lname" placeholder="Your last name.." [(ngModel)]="secondName" required>
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" name="email" placeholder="Your email" ngModel>
+        <input type="email" name="email" id="email" name="email" placeholder="Your email" ngModel required email>
 
         <label for="country">Country</label>
-        <select id="country" name="country" ngModel>
+        <select id="country" name="country" [(ngModel)]="defaultCountry" >
             <option value="UK" >UK</option>
             <option value="China" >China</option>
             <option value="Kenya">Kenya</option>
@@ -37,6 +41,6 @@
             <label><input type="checkbox" ngModel name="music" value="music">Music</label>
         </div>
 
-        <input type="submit" value="Submit" id="btn">
+        <input type="submit" value="Submit" id="btn" [disabled]="!myForm.valid">
     </form>
 </div>

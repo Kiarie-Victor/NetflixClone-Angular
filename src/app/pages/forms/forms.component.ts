@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,11 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent {
+
+
+  defaultCountry = 'Kenya'
+  firstName?:string;
+  secondName?:string;
 
   onSubmit(form: NgForm){
     console.log(form)
