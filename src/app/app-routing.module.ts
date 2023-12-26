@@ -7,17 +7,19 @@ import { ErrorComponent } from './pages/error/error.component';
 import { CanDeactivateService, canDeactivateTeam } from './service/candeactivate.service';
 import { DemoComponent } from './pages/demo/demo.component';
 import { PostResolveService, canResolveGuard } from './service/postresolve.service';
+import { FormsComponent } from './pages/forms/forms.component';
 const ROUTES: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'demo', component:DemoComponent, resolve:{posts:canResolveGuard}},
   {path:'search',component:SearchComponent, canDeactivate:[canDeactivateTeam]},
   {path:'movie/:id', component:MovieDetailsComponent},
+  {path:'forms', component:FormsComponent},
   {path:'**', component:ErrorComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(ROUTES, {enableTracing:true})],
+  imports: [RouterModule.forRoot(ROUTES,)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

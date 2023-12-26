@@ -28,8 +28,8 @@ export class AppComponent implements OnInit{
   }
 
 
-//   @HostListener('document:scroll') scrollover(){
-//    console.log(document.body.scrollTop,'scrolllength#');
+//   @HostListener('document:scroll') scrollOver(){
+//    console.log(document.body.scrollTop,'scrollLength#');
     
 //    if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 0)
 //    {

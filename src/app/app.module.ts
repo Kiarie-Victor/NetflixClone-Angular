@@ -14,6 +14,7 @@ import { HighlightDirective } from "./directives/highlight.directive";
 import { PostCardService } from "./service/postcard.service";
 import { DemoComponent } from "./pages/demo/demo.component";
 import { PostResolveService } from "./service/postresolve.service";
+import { FormsComponent } from './pages/forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PostResolveService } from "./service/postresolve.service";
     MovieDetailsComponent,
     AppComponent,
     DemoComponent,
-    HighlightDirective
+    HighlightDirective,
+    FormsComponent
   ],
   imports:[
     HttpClientModule,

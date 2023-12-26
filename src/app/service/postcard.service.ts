@@ -14,7 +14,7 @@ export class PostCardService{
         const postList:Promise<{}>= new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(this.videos);
-            }, 3000)
+            }, 7000)
         });
         return postList;
       }
