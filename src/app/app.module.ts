@@ -15,6 +15,7 @@ import { PostCardService } from "./service/postcard.service";
 import { DemoComponent } from "./pages/demo/demo.component";
 import { PostResolveService } from "./service/postresolve.service";
 import { FormsComponent } from './pages/forms/forms.component';
+import { ReactformComponent } from './pages/reactform/reactform.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsComponent } from './pages/forms/forms.component';
     AppComponent,
     DemoComponent,
     HighlightDirective,
-    FormsComponent
+    FormsComponent,
+    ReactformComponent
   ],
   imports:[
     HttpClientModule,

@@ -1,0 +1,54 @@
+<div class="form">
+    <h2 id="registration"></h2>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="personalDetails" >
+            <label for="fname">First Name</label>
+        <input type="text"  id="fname" placeholder="Your name.." formControlName="firstname">
+
+        <label for="lname">Last Name</label>
+        <input type="text"  id="lname" placeholder="Your last name.." formControlName="lastname">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" formControlName="email">
+        <span *ngIf="reactiveForm.get('personalDetails.email').invalid && reactiveForm.get('personalDetails.email').touched" style="color: red;">The email is not valid</span><br>
+    </div>
+        
+        <label for="country">Country</label>
+        <select id="country" formControlName="country">
+            <option value="UK" >UK</option>
+            <option value="China" >China</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Russia">Russia </option>
+            <option value="United States">United States</option>
+        </select>
+
+        <label for="gender">Gender</label><br>
+            <input type="radio" name="gender" id='male' value='male' formControlName="gender">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id='female' value='female' formControlName="gender">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id='other' value='other' formControlName="gender">
+            <label for="other">Other</label>
+
+        <br><br>
+
+        <label> Hobbies <i>(Optional)</i></label>
+        <div class="form-inline">
+            <label><input type="checkbox" value="sports" checked formControlName="hobbies">Sports</label>
+            <label><input type="checkbox"  value="movies">Movies</label>
+            <label><input type="checkbox" value="music">Music</label>
+        </div>
+
+        <input type="submit" value="Submit" id="btn">
+    </form>
+</div>
+
+<!--  <div class="form-data">
+    <h1>Data</h1>
+    <p>First Name <b>{{firstName}}</b></p>
+    <p>Last Name <b>{{secondName}}</b>
+    </p>
+    <P>Email: <b>{{email}}</b></P>
+    <P>Country : <b>{{country}}</b></P>
+    <p>Gender: <b>{{gen}}</b></p>
+</div> -->

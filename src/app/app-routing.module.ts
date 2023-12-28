@@ -8,6 +8,7 @@ import { CanDeactivateService, canDeactivateTeam } from './service/candeactivate
 import { DemoComponent } from './pages/demo/demo.component';
 import { PostResolveService, canResolveGuard } from './service/postresolve.service';
 import { FormsComponent } from './pages/forms/forms.component';
+import { ReactformComponent } from './pages/reactform/reactform.component';
 const ROUTES: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home', component:HomeComponent},
@@ -15,6 +16,7 @@ const ROUTES: Routes = [
   {path:'search',component:SearchComponent, canDeactivate:[canDeactivateTeam]},
   {path:'movie/:id', component:MovieDetailsComponent},
   {path:'forms', component:FormsComponent},
+  {path:'reactform', component:ReactformComponent},
   {path:'**', component:ErrorComponent}
 ];
 
