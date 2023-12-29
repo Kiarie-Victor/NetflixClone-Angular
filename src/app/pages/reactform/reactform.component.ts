@@ -16,7 +16,7 @@ ngOnInit(){
       personalDetails: new FormGroup({
       firstname: new FormControl(null, [ Validators.required, this.noSpaceValidator]),
       lastname: new FormControl(null, Validators.required),
-      email: new FormControl(null, [Validators.required, Validators.email]),
+      email: new FormControl(null, [Validators.required, Validators.email],this.emailControlValidator),
       }),
       gender: new FormControl('male'),
       country: new FormControl('China'),
@@ -37,7 +37,19 @@ ngOnInit(){
   noSpaceValidator(control:FormControl){
     if(control.value != null && control.value.indexOf(' ') != -1){
       return {noSpaceAllowed:true}
-    }
-    return null
+    }else
+      return null
+  }
+  emailControlValidator(control: FormControl): Promise<any>{
+    const asyncValidator = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if(control.value == 'victorkiariem@gmail.com'){
+          resolve({emailControlValidator:true})
+        }
+        else
+          resolve(null)
+      }, 5000);
+    })
+    return asyncValidator
   }
 }
