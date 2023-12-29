@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -13,17 +14,30 @@ export class ReactformComponent implements OnInit{
 ngOnInit(){
     this.reactiveForm = new FormGroup({
       personalDetails: new FormGroup({
-      firstname: new FormControl(null, Validators.required),
+      firstname: new FormControl(null, [ Validators.required, this.noSpaceValidator]),
       lastname: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       }),
       gender: new FormControl('male'),
       country: new FormControl('China'),
-      hobbies: new FormControl(null)
+      hobbies: new FormControl(null),
+      skills: new FormArray([
+        new FormControl(null, Validators.required),
+      ])
     });
   }
   onSubmit(){
     console.log(this.reactiveForm)
     //this.reactiveForm.reset()
+  }
+  addNew():void{
+    (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null, Validators.required))
+  }
+
+  noSpaceValidator(control:FormControl){
+    if(control.value != null && control.value.indexOf(' ') != -1){
+      return {noSpaceAllowed:true}
+    }
+    return null
   }
 }

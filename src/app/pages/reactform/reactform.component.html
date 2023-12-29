@@ -4,7 +4,10 @@
         <div formGroupName="personalDetails" >
             <label for="fname">First Name</label>
         <input type="text"  id="fname" placeholder="Your name.." formControlName="firstname">
-
+        <div>
+            <small *ngIf="reactiveForm.get('personalDetails.firstname').errors ?. ['required'] && reactiveForm.get('personalDetails.firstname').touched">Firstname is required field</small>
+            <small *ngIf="reactiveForm.get('personalDetails.firstname').errors ?. ['noSpaceAllowed']">Firstname cannot contain a space</small>
+        </div>
         <label for="lname">Last Name</label>
         <input type="text"  id="lname" placeholder="Your last name.." formControlName="lastname">
 
@@ -32,6 +35,14 @@
 
         <br><br>
 
+        <div formArrayName="skills">
+            <ng-container *ngFor="let skill of reactiveForm.get('skills')['controls'] let i = index" >
+                <input type="text" placeholder="add a skill...." formControlName="{{i}}">
+                
+            </ng-container>
+            <button (click)="addNew()">add new skill section</button>
+        </div>
+
         <label> Hobbies <i>(Optional)</i></label>
         <div class="form-inline">
             <label><input type="checkbox" value="sports" checked formControlName="hobbies">Sports</label>
@@ -40,8 +51,9 @@
         </div>
 
         <input type="submit" value="Submit" id="btn">
-    </form>
+</form>
 </div>
+
 
 <!--  <div class="form-data">
     <h1>Data</h1>
