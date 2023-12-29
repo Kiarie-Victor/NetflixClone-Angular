@@ -35,3 +35,17 @@ input.ng-invalid.ng-touched{
 small{
     color: red;
 }
+.myForm.INVALID{
+    border: 1px solid red;
+    box-shadow: 0 0 31px rgba(255, 0, 0, 0.7) !important;
+}
+
+.myForm.VALID{
+    border: 1px solid #2ee536;
+    box-shadow: 0 0 31px rgba(78, 233, 84, 0.7) !important;
+}
+
+.myForm.PENDING{
+    border: 1px solid #f6de0b;
+    box-shadow: 0 0 31px rgba(255, 235, 0, 0.7) !important;
+}

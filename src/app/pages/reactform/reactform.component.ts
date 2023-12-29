@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactformComponent implements OnInit{
     reactiveForm: FormGroup;
+    formStatus;
 
  
 ngOnInit(){
@@ -25,10 +26,23 @@ ngOnInit(){
         new FormControl(null, Validators.required),
       ])
     });
+
+    // this.reactiveForm.get('personalDetails.firstname').valueChanges.subscribe((value) => {
+    //   console.log(value)
+    // })
+
+    // this.reactiveForm.valueChanges.subscribe((value) => {
+    //   console.log(value)
+    // })
+
+    this.reactiveForm.statusChanges.subscribe((value) => {
+      console.log(value)
+      this.formStatus = value
+    })
   }
   onSubmit(){
     console.log(this.reactiveForm)
-    //this.reactiveForm.reset()
+    this.reactiveForm.reset()
   }
   addNew():void{
     (<FormArray>this.reactiveForm.get('skills')).push(new FormControl(null, Validators.required))

@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form myForm" [ngClass]="formStatus">
     <h2 id="registration"></h2>
     <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
         <div formGroupName="personalDetails" >
