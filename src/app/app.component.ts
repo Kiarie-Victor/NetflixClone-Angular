@@ -28,17 +28,17 @@ export class AppComponent implements OnInit{
   }
 
 
-//   @HostListener('document:scroll') scrollOver(){
-//    console.log(document.body.scrollTop,'scrollLength#');
+  @HostListener('document:scroll') scrollOver(){
+   console.log(document.body.scrollTop,'scrollLength#');
     
-//    if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 0)
-//    {
-//     this.navBg = {
-//        'background-color':'#000000'
-//      }
-//     }else
-//    {
-//        this.navBg = {}
-//    }
-//  }
+   if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 0)
+   {
+    this.navBg = {
+       'background-color':'#000000'
+     }
+    }else
+   {
+       this.navBg = {}
+   }
+ }
 }

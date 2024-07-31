@@ -2,7 +2,8 @@
     <div class="row p-5">
         <div class="col-lg-2" *ngIf="getMovieDetailResult.poster_path">
                 <img 
-                src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.poster_path }}" 
+                class="profile-image"
+               src="https://image.tmdb.org/t/p/original/{{ getMovieDetailResult.poster_path }}" 
                 >
         </div>
         <div class="col-lg-10 mt-5 p-4">
@@ -19,6 +20,7 @@
                         <div class="row mt-2 mb-2">
                             <div class="col-lg-2" *ngIf="c.profile_path">
                                 <img 
+                                class="profile-image"
                                 src="https://image.tmdb.org/t/p/original/{{ c.profile_path}}" 
                                 >
                             </div>
@@ -29,7 +31,6 @@
                         </div>
 
                         </div>
-
                     </div>
                 </div>
         </div>

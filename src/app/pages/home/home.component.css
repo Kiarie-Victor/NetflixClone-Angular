@@ -37,14 +37,16 @@
     margin-right: 7px;
 }
 
-.rowimg:hover
+.rowing:hover
 {
     transform: scale(1.09);
     cursor: pointer;
+    opacity: 0.8;
 }
 
 .largeposter{
     max-height: 300px;
+    border-radius: 20px;
 }
 
 .rowposter::-webkit-scrollbar
